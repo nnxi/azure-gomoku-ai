@@ -1,0 +1,52 @@
+# ----------------------
+# 1. 공통 및 OS/IDE 설정
+# ----------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ----------------------
+# 2. 보안/환경변수
+# ----------------------
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ----------------------
+# 3. Node.js
+# ----------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+dist/
+build/
+
+# ----------------------
+# 4. Python
+# ----------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ----------------------
+# 5. etc
+# ----------------------
+
+venv/
+env/
+.venv/
+.env/
+
+.funcignore
+local.settings.json
