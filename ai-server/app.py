@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # [중요] 이게 있어야 리액트랑 통신됨
+from flask_cors import CORS
 import random
-import game_logic  # 방금 만든 게임 로직 파일 불러오기
+from src import game_logic  # 방금 만든 게임 로직 파일 불러오기
 
 app = Flask(__name__)
 CORS(app)  # 모든 접속 허용
