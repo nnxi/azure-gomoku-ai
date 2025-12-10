@@ -108,7 +108,7 @@ if __name__ == '__main__':
         print(f"✨ {epoch+1}학년 수료! 평균 오차: {avg_loss:.4f}, 정답률: {accuracy:.2f}%")
         
         # 중간 저장
-        torch.save(model.state_dict(), f"data/model_epoch_{epoch+1}.pth")
+        torch.save(model.state_dict(), f"../data/model_epoch_{epoch+1}.pth")
 
     print("모든 학습 완료")
     # 최종 결과물 저장
