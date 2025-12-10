@@ -112,5 +112,5 @@ if __name__ == '__main__':
 
     print("모든 학습 완료")
     # 최종 결과물 저장
-    torch.save(model.state_dict(), "data/best_model.pth")
+    torch.save(model.state_dict(), "../data/best_model.pth")
     print("'best_model.pth' 저장 완료")
