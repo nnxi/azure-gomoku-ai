@@ -93,14 +93,14 @@ def process_gomocup_files(data_folder):
     return X, Y
 
 if __name__ == '__main__':
-    data_path = 'data' 
+    data_path = '../data' 
     
     if os.path.exists(data_path):
         X, Y = process_gomocup_files(data_path)
         
         if len(X) > 0:
-            np.save('data/dataset_x.npy', X)
-            np.save('data/dataset_y.npy', Y)
+            np.save('../data/dataset_x.npy', X)
+            np.save('../data/dataset_y.npy', Y)
             print("저장 완료!")
         else:
             print("데이터가 없습니다.")
