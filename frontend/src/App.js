@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 function App() {
-  // 15x15 바둑판 만들기 (0: 빈칸, 1: 흑돌/나, 2: 백돌/AI)
+  // 0: 빈칸, 1: 흑돌, 2: 백돌
   const [board, setBoard] = useState(Array(15).fill(null).map(() => Array(15).fill(0)));
   const [status, setStatus] = useState("당신의 차례입니다 (흑돌 ⚫)");
 
@@ -18,14 +18,12 @@ function App() {
 
     if (checkWin(newBoard, row, col, 1)) {
         setStatus("🎉 당신의 승리입니다! (흑돌 승) 🎉");
-        return; // 여기서 함수 종료
+        return;
     }
 
     setStatus("AI가 생각 중... 🤖");
 
     try {
-      // 2. 서버에 "나 여기에 뒀어!" 하고 보내기
-      // 주의: Node서버 주소(3000번)를 정확히 적어야 합니다.
       const response = await axios.post('http://localhost:3000/api/play', {
         boardState: newBoard,
         userMove: { row: row, col: col }
@@ -43,13 +41,13 @@ function App() {
           return; 
       }
 
-      // 3. AI가 둔 수(백돌) 받아와서 업데이트
+      // AI 수 업데이트
       const { x, y, isWin } = response.data; 
       
       console.log("AI 응답:", x, y);
 
       if (x !== undefined && y !== undefined) {
-          newBoard[x][y] = 2; // 2는 백돌
+          newBoard[x][y] = 2;
           setBoard([...newBoard]); 
 
           if (isWin) {
@@ -66,7 +64,7 @@ function App() {
     }
   };
 
-  // 오목 승리 판정 함수 (자바스크립트 버전)
+  // 유저 승리 체크
   const checkWin = (board, row, col, color) => {
     const directions = [
       [0, 1],   // 가로

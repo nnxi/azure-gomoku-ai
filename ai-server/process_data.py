@@ -3,7 +3,7 @@ import os
 import glob
 
 def process_gomocup_files(data_folder):
-    print(f"📂 '{data_folder}' 폴더와 그 하위 폴더들을 탐색합니다...")
+    print(f"'{data_folder}' 폴더와 그 하위 폴더들을 탐색합니다...")
     
     # [수정된 부분] "**"와 recursive=True를 써서 하위 폴더까지 다 뒤집니다.
     search_pattern = os.path.join(data_folder, "**", "*")
@@ -81,11 +81,10 @@ def process_gomocup_files(data_folder):
         if success_count % 1000 == 0 and success_count > 0:
             print(f"   ... {success_count}개 게임 처리 완료 ({len(X_data)}개 수집됨)")
 
-    print("🔄 데이터를 Numpy 배열로 변환 중...")
     X = np.array(X_data, dtype=np.int8)
     Y = np.array(Y_data, dtype=np.int16)
     
-    print(f"✅ 변환 완료!")
+    print(f"변환 완료")
     print(f"   - 총 읽은 게임 수: {success_count}판")
     print(f"   - 총 학습 데이터(수) 개수: {len(X)}")
     print(f"   - X 형태: {X.shape}") 
@@ -102,8 +101,8 @@ if __name__ == '__main__':
         if len(X) > 0:
             np.save('data/dataset_x.npy', X)
             np.save('data/dataset_y.npy', Y)
-            print("💾 저장 완료!")
+            print("저장 완료!")
         else:
-            print("⚠️ 데이터가 없습니다.")
+            print("데이터가 없습니다.")
     else:
-        print("❌ data 폴더가 없습니다.")
+        print("data 폴더가 없습니다.")

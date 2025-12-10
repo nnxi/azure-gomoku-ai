@@ -17,7 +17,7 @@ app.post('/api/play', async (req, res) => {
             userMove: userMove
         });
 
-        // 파이썬의 응답 (정상 좌표 or 에러 메시지)
+        // 파이썬의 응답
         const aiResponse = response.data;
 
         // 프론트로 그대로 전달
