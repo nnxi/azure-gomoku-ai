@@ -77,3 +77,20 @@ h1 { color: #333; }
 .cell.white::after {
   background-color: white;
 }
+
+.restart-btn {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+
+.restart-btn:hover {
+  background-color: #45a049;
+}
