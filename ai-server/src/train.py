@@ -105,7 +105,7 @@ if __name__ == '__main__':
         # 한 권 다 풀었을 때 평균 점수
         avg_loss = total_loss / len(loader)
         accuracy = 100 * correct / total
-        print(f"✨ {epoch+1}학년 수료! 평균 오차: {avg_loss:.4f}, 정답률: {accuracy:.2f}%")
+        print(f"{epoch+1}번째 Epoch 완료. 평균 오차: {avg_loss:.4f}, 정답률: {accuracy:.2f}%")
         
         # 중간 저장
         torch.save(model.state_dict(), f"../data/model_epoch_{epoch+1}.pth")
