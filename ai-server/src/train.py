@@ -61,6 +61,15 @@ if __name__ == '__main__':
     
     # 모델 소환
     model = GomokuNet().to(DEVICE)
+
+    model_path = '../data/best_model.pth'
+    
+    if os.path.exists(model_path):
+        print(f"기존 학습된 모델로 다시 학습")
+
+        model.load_state_dict(torch.load(model_path, map_location=DEVICE))
+    else:
+        print("기존 모델이 없음")
     
     # 채점 기준표 (CrossEntropyLoss: 틀린 답을 고르면 벌점을 줌)
     criterion = nn.CrossEntropyLoss()
