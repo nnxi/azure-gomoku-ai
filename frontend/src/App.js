@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 function App() {
   // 0: 빈칸, 1: 흑돌, 2: 백돌
   const [board, setBoard] = useState(Array(15).fill(null).map(() => Array(15).fill(0)));
@@ -36,7 +38,7 @@ function App() {
     setStatus("AI가 생각 중... 🤖");
 
     try {
-      const response = await axios.post('http://localhost:5000/calculate-move', {
+      const response = await axios.post(`${API_URL}/calculate-move`, {
         board: newBoard,       // 백엔드가 받는 변수명 'board'로 수정
         userMove: { row: row, col: col }
       });
