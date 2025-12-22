@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_URL = 'https://gomoku-backend-jh.azurewebsites.net';
+const API_URL = 'azure-gomoku-ai-b9d0e0cddxbfdtee.eastasia-01.azurewebsites.net';
 
 function App() {
   // 0: 빈칸, 1: 흑돌, 2: 백돌
